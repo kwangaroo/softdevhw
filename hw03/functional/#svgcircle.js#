@@ -1,0 +1,27 @@
+var pic = document.getElementById("vimage"); 
+
+var intervalID; 
+var stop = function(){ 
+window.clearInterval(intervalID);
+}
+
+var grow = function(){ 
+    var c = document.createElementNS(
+	"http://www.w3.org/2000/svg", "circle"); 
+    var radius;
+    var growing = true; 
+    var animateCode = function(){ 
+	c = documment.getElementByTagName('circle')[0]; 
+	radius = parseInt(c.getAttribute('r')); 
+	c.setAttribute('r', radius.toString()); 
+	//increasing decreasing radius 
+
+	if (radius == (c.width / 2))
+	    growing = false;
+	else if ( radius == 0 ) {
+	    growing = true;
+	}
+
+    }
+    intervalID = window.setInterval(animateCode, 16); 
+} 
