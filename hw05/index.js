@@ -58,13 +58,20 @@ var data = [
 {name: "Dems Abroad", total: 17, allotted: 0 }
 ];
 
+
+
 d3.select(".chart")
   .selectAll("div")
   .data(data)
   .enter().append("div")
   .style("width", function(d){
       return d.total * 5 + "px"; })
+  .style("background-color", function(d){ 
+      if(d.allotted != 0) return "blue";
+      else return "red";
+  })
   .text(function(d){
       return d.name + " Allotted: " + d.allotted + " Total: " + d.total;
   });
+
 
