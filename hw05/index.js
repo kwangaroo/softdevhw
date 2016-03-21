@@ -63,7 +63,7 @@ d3.select(".chart")
   .data(data)
   .enter().append("div")
   .style("width", function(d){
-      return d.total * 2 + "px"; })
+      return d.total * 5 + "px"; })
   .text(function(d){
       return d.name + " Allotted: " + d.allotted + " Total: " + d.total;
   });
