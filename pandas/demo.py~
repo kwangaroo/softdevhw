@@ -1,0 +1,6 @@
+import pandas 
+import numpy 
+
+s = pandas.Series([1, "cats", 'A', -327.93]) 
+
+print s

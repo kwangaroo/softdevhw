@@ -1,0 +1,74 @@
+"""
+PIP INSTALL: 
+pandas 
+xlrd
+openpyxl
+"""
+
+import pandas 
+import numpy 
+
+a = pandas.Series(["sahjs", 8329, "jajajajaj", 82.9])
+print a 
+
+
+#Creating a series 
+s = pandas.Series(['Ohio', 'California', 'Nebraska', 'Maine'])
+print s
+
+#Surprise! Series can have more than one data type in them
+t = pandas.Series([1, "Cats", 'A', -3928392.02]) 
+print t 
+
+
+#changing index
+t.index=["Great Number", "Cutest Animal", "Grade Goals", "Idk I just keysmashed"]
+print t
+
+#can we add 'em?
+u = pandas.concat([s,t])
+print u 
+
+#IN DIFFERENT WAYS???
+v = pandas.concat([s,t], axis=1)
+print v
+
+#dictionary conversion 
+d = {'Cats': 100, 'Dogs': 110, 'Goldfish': -20, 'Parakeet': 75}
+dictSeries = pandas.Series(d) 
+print dictSeries
+
+#math operations
+print dictSeries / 5
+
+dict = {"name": ["John", "Bob", "Sara", "Balthazar"], 
+        "class": [2011, 2016, 2017, 2020],
+        "grade": [88, 90, 92, 94]
+    }
+
+df = pandas.DataFrame(dict, columns=["name", "class", "grade"])
+print df 
+
+print df * 2
+
+c = pandas.read_csv('.\pb.csv') 
+c.head()
+print "\n"
+print c
+
+c.to_excel('powerball.xlsx', index=False)
+
+test = pandas.read_excel('sample.xlsx', 'Sheet1') 
+print "\n"
+print test
+
+
+b=test.sort_values(by='GPA', ascending=True)
+print b
+print test['GPA'][3]
+
+test.set_value(3,'GPA',39) 
+
+print test
+
+test.to_excel('students.xlsx', index=False)
