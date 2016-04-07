@@ -20,7 +20,7 @@ def symdiff(a,b):
     return setdiff( union(a,b), intersection(a,b) )
 
 print symdiff([2,4,5,6,7], [4,3,6,9])
-print "expected: [2,3,7,9] i think lol"
+print "expected: [2,3,5,7,9] i think lol"
 
 def cart(a,b): 
     return [(x,y) for x in a for y in b]
