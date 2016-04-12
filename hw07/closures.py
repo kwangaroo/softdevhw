@@ -14,7 +14,7 @@ print repeat('cool')(3)
 def qs(s): 
     if s == []: 
         return []
-    return qs([x for x in s[1:] if x < s[0]]) + [s[0]] + qs([x for x in s[1:] if x > s[0]])  
+    return qs([x for x in s if x < s[0]]) + [s[0]] + qs([x for x in s if x > s[0]])  
 
 #HOW YALL DOING THIS IN ONE LINE W/O STACK OVERFLOWING
            
